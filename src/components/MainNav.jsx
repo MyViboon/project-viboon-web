@@ -44,11 +44,17 @@ function MainNav() {
               Viboon.IT
             </Link>
           </div>
-
-          {/* Hamburger Icon */}
-          <button onClick={toggleMenu} className="md:hidden">
-            {menuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
+          <div className="flex gap-2">
+            <span className="pt-2">{user.email.split("@")[0]}</span>
+            <img
+              className="w-8 h-8"
+              src="https://cdn-icons-png.flaticon.com/128/1999/1999625.png"
+            />
+            {/* Hamburger Icon */}
+            <button onClick={toggleMenu} className="md:hidden">
+              {menuOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+          </div>
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center gap-6 mx-auto">
