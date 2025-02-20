@@ -44,14 +44,18 @@ function MainNav() {
               Viboon.IT
             </Link>
           </div>
-          <div className="flex gap-2">
-            <span className="pt-2">{user.email.split("@")[0]}</span>
-            <img
-              className="w-8 h-8"
-              src="https://cdn-icons-png.flaticon.com/128/1999/1999625.png"
-            />
-            {/* Hamburger Icon */}
-            <button onClick={toggleMenu} className="md:hidden">
+          <div className="flex gap-2 md:hidden items-center">
+            {user && (
+              <img
+                className="w-8 h-8 rounded-full"
+                src={
+                  user?.photoURL ||
+                  "https://cdn-icons-png.flaticon.com/128/1999/1999625.png"
+                }
+                alt="User Profile"
+              />
+            )}
+            <button onClick={toggleMenu}>
               {menuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
           </div>
@@ -124,14 +128,14 @@ function MainNav() {
           {user ? (
             <div className="hidden md:flex items-center gap-5">
               <span>{user.email.split("@")[0]}</span>
+              <img
+                className="w-8 h-8"
+                src="https://cdn-icons-png.flaticon.com/128/1999/1999625.png"
+              />
               <button
                 onClick={toggleDropdown}
                 className="flex items-center gap-2"
               >
-                <img
-                  className="w-8 h-8"
-                  src="https://cdn-icons-png.flaticon.com/128/1999/1999625.png"
-                />
                 <ChevronDown />
               </button>
               {isOpen && (
