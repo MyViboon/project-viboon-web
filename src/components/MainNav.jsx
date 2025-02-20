@@ -48,7 +48,7 @@ function MainNav() {
           <div className="flex gap-2 md:hidden items-center">
             {user && (
               <div className="flex gap-2">
-                <span className="p-1">{user.email.split("@")[0]}</span>
+                <span className="p-1">{user?.email.split("@")[0]}</span>
                 <img
                   className="w-8 h-8 rounded-full"
                   src={
