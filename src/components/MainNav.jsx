@@ -33,7 +33,8 @@ function MainNav() {
   const inactiveClass =
     "hover:bg-green-50 px-3 py-2 rounded-md text-lg font-medium";
 
-  console.log(carts.length);
+  // console.log(carts.length);
+  console.log(user);
   return (
     <nav className="bg-pink-100 shadow-md font-Itim ">
       <div className="mx-auto px-4">
@@ -46,14 +47,17 @@ function MainNav() {
           </div>
           <div className="flex gap-2 md:hidden items-center">
             {user && (
-              <img
-                className="w-8 h-8 rounded-full"
-                src={
-                  user?.photoURL ||
-                  "https://cdn-icons-png.flaticon.com/128/1999/1999625.png"
-                }
-                alt="User Profile"
-              />
+              <div className="flex gap-2">
+                <span className="p-1">{user?.email.split("@")[0]}</span>
+                <img
+                  className="w-8 h-8 rounded-full"
+                  src={
+                    user?.photoURL ||
+                    "https://cdn-icons-png.flaticon.com/128/1999/1999625.png"
+                  }
+                  alt="User Profile"
+                />
+              </div>
             )}
             <button onClick={toggleMenu}>
               {menuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -127,7 +131,7 @@ function MainNav() {
           {/* User Menu */}
           {user ? (
             <div className="hidden md:flex items-center gap-5">
-              <span>{user.email.split("@")[0]}</span>
+              <span>{user?.email.split("@")[0]}</span>
               <img
                 className="w-8 h-8"
                 src="https://cdn-icons-png.flaticon.com/128/1999/1999625.png"
