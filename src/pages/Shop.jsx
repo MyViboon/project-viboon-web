@@ -20,7 +20,7 @@ const Shop = () => {
       </div>
 
       {/* Product */}
-      <div className="w-full md:w-1/2 p-4 min-h-screen overflow-y-auto">
+      <div className="w-full md:w-1/2 p-4 min-h-screen overflow-y-auto ">
         <p className="text-2xl font-bold mb-4">สินค้าทั้งหมด</p>
         <div className="flex flex-wrap gap-4 md:gap-6">
           {products.map((item, index) => (
@@ -30,10 +30,7 @@ const Shop = () => {
       </div>
 
       {/* Cart */}
-      {/* <div className="w-full md:w-1/4 p-4 bg-gray-100 min-h-screen overflow-y-auto">
-        <CartCard />
-      </div> */}
-      <div className="fixed bottom-0 left-0 w-full p-4 bg-gray-100 shadow-md md:relative md:w-1/4 md:min-h-screen md:overflow-y-auto">
+      <div className="w-full md:w-1/4 p-4 bg-gray-100  overflow-y-auto">
         <CartCard />
       </div>
     </div>

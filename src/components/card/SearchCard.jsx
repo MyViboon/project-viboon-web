@@ -128,6 +128,7 @@ import useEcomStore from "../../store/ecom-store";
 import Slider from "rc-slider";
 import "rc-slider/assets/index.css";
 import { numberFormat } from "../../utils/number";
+import CartCard from "./CartCard";
 
 const SearchCard = () => {
   const getProduct = useEcomStore((state) => state.getProduct);
