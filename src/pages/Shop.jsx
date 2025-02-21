@@ -15,7 +15,7 @@ const Shop = () => {
   return (
     <div className="flex flex-col md:flex-row min-h-screen">
       {/* SearchBar */}
-      <div className="w-full md:w-1/4 p-4 bg-gray-100 min-h-screen">
+      <div className="w-full md:w-1/4 p-4 bg-gray-100 h-auto md:min-h-screen">
         <SearchCard />
       </div>
 
@@ -30,7 +30,10 @@ const Shop = () => {
       </div>
 
       {/* Cart */}
-      <div className="w-full md:w-1/4 p-4 bg-gray-100 min-h-screen overflow-y-auto">
+      {/* <div className="w-full md:w-1/4 p-4 bg-gray-100 min-h-screen overflow-y-auto">
+        <CartCard />
+      </div> */}
+      <div className="fixed bottom-0 left-0 w-full p-4 bg-gray-100 shadow-md md:relative md:w-1/4 md:min-h-screen md:overflow-y-auto">
         <CartCard />
       </div>
     </div>
