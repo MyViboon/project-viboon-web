@@ -59,13 +59,19 @@ function MainNav() {
                 />
               </div>
             )}
-            <button onClick={toggleMenu}>
+            <button onClick={toggleMenu} className="relative">
+              {carts.length > 0 && (
+                <span className="bg-red-600 text-white w-4 h-4 flex items-center justify-center rounded-full text-xs absolute top-0 left-1 transform translate-x-3 -translate-y-2">
+                  {carts.length}
+                </span>
+              )}
               {menuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
           </div>
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center gap-6 mx-auto">
+            est
             <NavLink
               onClick={closeMenu}
               className={({ isActive }) =>
