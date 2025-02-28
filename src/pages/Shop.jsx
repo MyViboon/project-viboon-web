@@ -86,7 +86,7 @@ const Shop = () => {
                   {carts.length}
                 </span>
               )}
-              <div className="flex items-center px-6 text-red-500 rounded text-lg font-bold gap-2">
+              <div className="flex items-center px-6 text-white rounded text-lg font-bold gap-2">
                 <span>{numberFormat(getTotalPrice())}</span>
                 บาท
               </div>
