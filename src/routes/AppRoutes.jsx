@@ -22,6 +22,7 @@ import EditProduct from "../pages/admin/EditProduct";
 import Payment from "../pages/user/Payment";
 import ManageOrders from "../pages/admin/ManageOrders";
 import HomeAbout from "../pages/about/About";
+import CartTotal from "../pages/CartTotal";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -31,6 +32,7 @@ const router = createBrowserRouter([
       { path: "shop", element: <Shop /> },
       { path: "cart", element: <Cart /> },
       { path: "about", element: <HomeAbout /> },
+      { path: "cart-total", element: <CartTotal /> },
       { path: "checkout", element: <Checkout /> },
       { path: "login", element: <Login /> },
       { path: "register", element: <Register /> },

@@ -3,10 +3,13 @@ import ProductCard from "../components/card/ProductCard";
 import useEcomStore from "../store/ecom-store";
 import SearchCard from "../components/card/SearchCard";
 import CartCard from "../components/card/CartCard";
+import { numberFormat } from "../utils/number";
 
 const Shop = () => {
   const getProduct = useEcomStore((state) => state.getProduct);
   const products = useEcomStore((state) => state.products);
+  const carts = useEcomStore((s) => s.carts);
+  const getTotalPrice = useEcomStore((state) => state.getTotalPrice);
 
   useEffect(() => {
     getProduct();
@@ -55,12 +58,41 @@ const Shop = () => {
         </div>
       </div>
 
-      <div className="m-20 md:hidden"></div>
+      <div className="m-12 md:hidden"></div>
 
       {/* Cart */}
 
-      <div className="w-full md:w-1/4 p-4 bg-gray-100 md:min-h-screen md:sticky md:top-20 fixed bottom-0 left-0">
+      {/* <div className="w-full md:w-1/4 p-4 bg-gray-100 md:min-h-screen md:sticky md:top-20 fixed bottom-0 left-0">
         <CartCard />
+      </div> */}
+
+      <div className="w-full md:w-1/4 p-4 bg-gray-100 md:min-h-screen md:sticky md:top-20 fixed bottom-0 left-0">
+        <div className="hidden md:block">
+          <CartCard />
+        </div>
+
+        {/* แสดงปุ่มสำหรับหน้าจอเล็ก */}
+        <div className="item-center ">
+          <div className="block md:hidden border p-2 bg-green-500 rounded-2xl">
+            <div
+              className="flex justify-between"
+              onClick={() => (window.location.href = "/cart-total")}
+            >
+              <h1 className="text-center m-2 text-2xl text-white font-bold relative">
+                รวมราคา
+              </h1>
+              {carts.length > 0 && (
+                <span className="bg-red-600 text-white w-6 h-6 flex items-center justify-center rounded-full text-xs absolute top-8 left-28 transform translate-x-3 -translate-y-1">
+                  {carts.length}
+                </span>
+              )}
+              <div className="flex items-center px-6 text-red-500 rounded text-lg font-bold gap-2">
+                <span>{numberFormat(getTotalPrice())}</span>
+                บาท
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
