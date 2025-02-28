@@ -36,7 +36,7 @@ function MainNav() {
   // console.log(carts.length);
   console.log(user);
   return (
-    <nav className="bg-pink-100 shadow-md font-Itim ">
+    <nav className="fixed z-50 top-0 left-0 w-full bg-pink-100 shadow-md font-Itim">
       <div className="mx-auto px-4">
         <div className="flex justify-between h-16 items-center">
           {/* Logo */}
