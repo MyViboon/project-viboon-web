@@ -14,9 +14,6 @@ const Home = () => {
 
       <p className="text-2xl text-center my-4">สินค้าใหม่</p>
       <NewProduct />
-
-
-
     </div>
   );
 };
