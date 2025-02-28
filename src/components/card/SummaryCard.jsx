@@ -54,8 +54,6 @@ const SummaryCard = () => {
     toast.success("จ่ายเงินเรียบร้อย");
   };
 
-  // console.log(products);
-
   return (
     // <div className="mx-auto">
     //   <div className="flex flex-wrap gap-4">
@@ -148,6 +146,7 @@ const SummaryCard = () => {
     //     </div>
     //   </div>
     // </div>
+
     <div className="mx-auto p-4">
       <div className="flex flex-col md:flex-row gap-4">
         {/* Left */}

@@ -34,7 +34,7 @@ function MainNav() {
     "hover:bg-green-50 px-3 py-2 rounded-md text-lg font-medium";
 
   // console.log(carts.length);
-  console.log(user);
+  // console.log(user);
   return (
     <nav className="fixed z-50 top-0 left-0 w-full bg-pink-100 shadow-md font-Itim">
       <div className="mx-auto px-4">
