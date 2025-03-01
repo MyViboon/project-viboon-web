@@ -7,6 +7,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import zxcvbn from "zxcvbn";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
+import LoadingScreen from "../../utils/LoadingScreen";
 
 const registerSchema = z
   .object({
@@ -23,6 +24,7 @@ const Register = () => {
   // Javascript
   const [passwordScore, setPasswordScore] = useState(0);
   const navigate = useNavigate();
+  const [isLoading, setIsLoading] = useState(false);
 
   const {
     register,
@@ -41,28 +43,44 @@ const Register = () => {
     setPasswordScore(validatePassword());
   }, [watch().password]);
 
+  // const onSubmit = async (data) => {
+  //   // const passwordScore = zxcvbn(data.password).score;
+  //   // console.log(passwordScore);
+  //   // if (passwordScore < 3) {
+  //   //   toast.warning("Password บ่ Strong!!!!!");
+  //   //   return;
+  //   // }
+  //   // console.log("ok ลูกพี่");
+  //   // Send to Back
+  //   try {
+  //     const res = await axios.post(
+  //       "https://western-project-api.vercel.app/api/register",
+  //       data
+  //     );
+
+  //     // console.log(res.data);
+  //     toast.success(res.data);
+  //     navigate("/");
+  //   } catch (err) {
+  //     const errMsg = err.response?.data?.message;
+  //     toast.error(errMsg);
+  //     console.log(err);
+  //   }
+  // };
   const onSubmit = async (data) => {
-    // const passwordScore = zxcvbn(data.password).score;
-    // console.log(passwordScore);
-    // if (passwordScore < 3) {
-    //   toast.warning("Password บ่ Strong!!!!!");
-    //   return;
-    // }
-    // console.log("ok ลูกพี่");
-    // Send to Back
+    setIsLoading(true); // เริ่มโหลด
     try {
       const res = await axios.post(
         "https://western-project-api.vercel.app/api/register",
         data
       );
-
-      // console.log(res.data);
       toast.success(res.data);
       navigate("/");
     } catch (err) {
       const errMsg = err.response?.data?.message;
       toast.error(errMsg);
-      console.log(err);
+    } finally {
+      setIsLoading(false); // หยุดโหลด
     }
   };
 
@@ -74,6 +92,7 @@ const Register = () => {
       className="min-h-screen flex 
     items-center justify-center bg-gray-100"
     >
+      {isLoading && <LoadingScreen />}{" "}
       <div className="w-full shadow-md bg-white p-8 max-w-md rounded-2xl">
         <h1 className="text-2xl text-center my-4 font-bold">Register</h1>
 
@@ -150,13 +169,19 @@ const Register = () => {
               )}
             </div>
 
-            <button
+            {/* <button
               className="bg-blue-500 rounded-md
              w-full text-white font-bold py-2 shadow
              hover:bg-blue-700
              "
             >
               Register
+            </button> */}
+            <button
+              className="bg-blue-500 rounded-md w-full text-white font-bold py-2 shadow hover:bg-blue-700 disabled:opacity-50"
+              disabled={isLoading}
+            >
+              {isLoading ? "กำลังดำเนินการ" : "Register"}
             </button>
           </div>
         </form>
