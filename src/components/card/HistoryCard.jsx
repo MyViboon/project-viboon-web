@@ -54,7 +54,7 @@ const HistoryCard = () => {
   };
 
   return (
-    <div className="space-y-4">
+    <div className="space-y-4 mt-20">
       <h1 className="text-2xl font-bold">ประวัติการสั่งซื้อ</h1>
       {/* คลุม */}
       <div className="space-y-4">
