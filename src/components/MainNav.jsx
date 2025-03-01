@@ -71,7 +71,6 @@ function MainNav() {
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center gap-6 mx-auto">
-            est
             <NavLink
               onClick={closeMenu}
               className={({ isActive }) =>
