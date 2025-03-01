@@ -62,7 +62,7 @@ const ProductCard = ({ item }) => {
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.2 }}
     >
-      <div className="border rounded-md shadow-md p-2 w-full sm:w-52 md:w-40 xl:w-48">
+      <div className="border rounded-md shadow-md p-2 w-full sm:w-52 md:w-40 xl:w-48 2xl:w-52">
         <div>
           {item.images && item.images.length > 0 ? (
             <img
