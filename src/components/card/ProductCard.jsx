@@ -62,12 +62,12 @@ const ProductCard = ({ item }) => {
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.2 }}
     >
-      <div className="border rounded-md shadow-md p-2 w-full sm:w-52">
+      <div className="border rounded-md shadow-md p-2 w-full sm:w-52 md:w-40 xl:w-48">
         <div>
           {item.images && item.images.length > 0 ? (
             <img
               src={item.images[0].url}
-              className="rounded-md w-full h-24 object-cover hover:scale-110 hover:duration-200"
+              className="rounded-md w-fit h-24 object-cover hover:scale-110 hover:duration-200 justify-center"
             />
           ) : (
             <div className="w-full h-24 bg-gray-200 rounded-md text-center flex items-center justify-center shadow">
