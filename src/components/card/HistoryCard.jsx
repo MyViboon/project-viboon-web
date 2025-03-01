@@ -16,11 +16,24 @@ const HistoryCard = () => {
     hdlGetOrders(token);
   }, []);
 
+  // const hdlGetOrders = (token) => {
+  //   getOrders(token)
+  //     .then((res) => {
+  //       // console.log(res);
+  //       setOrders(res.data.orders);
+  //     })
+  //     .catch((err) => {
+  //       console.log(err);
+  //     });
+  // };
   const hdlGetOrders = (token) => {
     getOrders(token)
       .then((res) => {
-        // console.log(res);
-        setOrders(res.data.orders);
+        // เรียงลำดับจากล่าสุดไปเก่าสุด
+        const sortedOrders = res.data.orders.sort(
+          (a, b) => new Date(b.updatedAt) - new Date(a.updatedAt)
+        );
+        setOrders(sortedOrders);
       })
       .catch((err) => {
         console.log(err);
@@ -57,8 +70,10 @@ const HistoryCard = () => {
                   <p className="font-bold">{dateFormat(item.updatedAt)}</p>
                 </div>
                 <div>
-                  <span className={`${getStatusColor(item.orderStatus)} 
-                  px-2 py-1 rounded-full`}>
+                  <span
+                    className={`${getStatusColor(item.orderStatus)} 
+                  px-2 py-1 rounded-full`}
+                  >
                     {item.orderStatus}
                   </span>
                 </div>

@@ -51,7 +51,7 @@ const Shop = () => {
             <ProductCard key={index} item={item} />
           ))}
         </div> */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 bg-re">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4 bg-re">
           {products.map((item, index) => (
             <ProductCard key={index} item={item} />
           ))}

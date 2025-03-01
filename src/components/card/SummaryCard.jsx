@@ -7,6 +7,8 @@ import { useNavigate } from "react-router-dom";
 import { numberFormat } from "../../utils/number";
 
 const SummaryCard = () => {
+  const clearCart = useEcomStore((s) => s.clearCart);
+  const carts = useEcomStore((s) => s.carts);
   const token = useEcomStore((state) => state.token);
   const [products, setProducts] = useState([]);
   const [cartTotal, setCartTotal] = useState(0);
@@ -38,7 +40,7 @@ const SummaryCard = () => {
     }
     saveAddress(token, address)
       .then((res) => {
-        console.log(res);
+        // console.log(res);
         toast.success(res.data.message);
         setAddressSaved(true);
       })
@@ -50,8 +52,9 @@ const SummaryCard = () => {
     if (!addressSaved) {
       return toast.warning("กรุณากรอกทีอยู่ก่อนจ้า");
     }
-    navigate("/user/payment");
     toast.success("จ่ายเงินเรียบร้อย");
+    navigate("/user/payment");
+    clearCart();
   };
 
   return (
