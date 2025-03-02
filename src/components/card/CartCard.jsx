@@ -43,7 +43,7 @@ const CartCard = () => {
 
                 <div>
                   <p className="font-bold">{item.title}</p>
-                  <p className="text-sm">{item.description}</p>
+                  <p className="text-sm">{item.description.substring(0, 25)}</p>
                 </div>
               </div>
               {/* Right */}
