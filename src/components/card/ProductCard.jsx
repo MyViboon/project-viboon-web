@@ -70,7 +70,7 @@ const ProductCard = ({ item }) => {
             {item.images && item.images.length > 0 ? (
               <img
                 src={item.images[0].url}
-                className="rounded-md w-fit h-24 object-cover hover:scale-110 hover:duration-200 justify-center"
+                className="rounded-md w-full h-24 object-contain hover:scale-110 hover:duration-200 justify-center"
               />
             ) : (
               <div className="w-full h-24 bg-gray-200 rounded-md text-center flex items-center justify-center shadow">
@@ -81,7 +81,9 @@ const ProductCard = ({ item }) => {
 
           <div className="py-2">
             <p className="text-xl truncate">{item.title}</p>
-            <p className="text-sm text-gray-500 truncate">{item.description}</p>
+            <p className="text-sm text-gray-500 truncate">
+              {item.description.substring(0, 15)}
+            </p>
           </div>
         </Link>
         <div className="flex justify-between items-center">

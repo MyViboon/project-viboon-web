@@ -175,7 +175,7 @@ const FormProduct = () => {
                   </td>
 
                   <td>{item.title}</td>
-                  <td>{item.description}</td>
+                  <td>{item.description.substring(0, 40)}</td>
                   <td>{numberFormat(item.price)}</td>
                   <td>{item.quantity}</td>
                   <td>{item.sold}</td>

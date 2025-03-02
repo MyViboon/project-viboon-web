@@ -30,7 +30,9 @@ const PageProduct = () => {
         />
         <div>
           <h1 className="text-3xl font-bold mb-4">{product.title}</h1>
-          <p className="text-gray-700 mb-4">{product.description}</p>
+          <p className="text-gray-700 mb-4 break-words">
+            {product.description}
+          </p>
           <p className="text-xl font-semibold text-blue-600">
             {product.price} บาท
           </p>
