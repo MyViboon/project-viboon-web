@@ -58,12 +58,22 @@ const Payment = () => {
         <p className="text-gray-600 mb-6">
           ขอบคุณที่ใช้บริการ ออเดอร์ของคุณได้รับการยืนยันแล้ว
         </p>
-        <button
-          className="bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-xl"
-          onClick={() => navigate("/")}
-        >
-          ย้อนกลับ
-        </button>
+        <div className="flex justify-center gap-6">
+          <button
+            className="bg-yellow-500 hover:bg-yellow-600 text-white px-6 py-3 rounded-xl"
+            onClick={() =>
+              window.open("https://forms.gle/d2hyJuCxgZAhAnEV8", "_blank")
+            }
+          >
+            แบบประเมิน
+          </button>
+          <button
+            className="bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-xl"
+            onClick={() => navigate("/")}
+          >
+            ย้อนกลับ
+          </button>
+        </div>
       </div>
     </div>
   );
