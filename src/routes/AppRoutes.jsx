@@ -23,6 +23,7 @@ import Payment from "../pages/user/Payment";
 import ManageOrders from "../pages/admin/ManageOrders";
 import HomeAbout from "../pages/about/About";
 import CartTotal from "../pages/CartTotal";
+import PageProduct from "../pages/PageProduct";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -33,6 +34,7 @@ const router = createBrowserRouter([
       { path: "cart", element: <Cart /> },
       { path: "about", element: <HomeAbout /> },
       { path: "cart-total", element: <CartTotal /> },
+      { path: "product-detail/:id", element: <PageProduct /> },
       { path: "checkout", element: <Checkout /> },
       { path: "login", element: <Login /> },
       { path: "register", element: <Register /> },

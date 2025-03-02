@@ -106,15 +106,15 @@
 //                 </span>
 //               )}
 //             </NavLink> */}
-//             <NavLink
-//               className={({ isActive }) =>
-//                 `relative px-3 py-2 rounded-md text-lg font-medium ${
-//                   isActive ? activeClass : inactiveClass
-//                 }`
-//               }
-//               to="/cart"
-//               onClick={closeMenu}
-//             >
+// <NavLink
+//   className={({ isActive }) =>
+//     `relative px-3 py-2 rounded-md text-lg font-medium ${
+//       isActive ? activeClass : inactiveClass
+//     }`
+//   }
+//   to="/cart"
+//   onClick={closeMenu}
+// >
 //               ตะกร้า
 //               {carts.length > 0 && (
 //                 <span className="bg-red-600 text-white w-6 h-6 flex items-center justify-center rounded-full text-xs absolute top-0 left-14 transform translate-x-22 -translate-y-1">
@@ -351,9 +351,18 @@ function MainNav() {
             >
               ร้านค้า
             </NavLink>
-            <NavLink
+            {/* <NavLink
               className={({ isActive }) =>
                 isActive ? activeClass : inactiveClass
+              }
+              to="/cart"
+              onClick={closeMenu}
+            > */}
+            <NavLink
+              className={({ isActive }) =>
+                `relative px-3 py-2 rounded-md text-lg font-medium ${
+                  isActive ? activeClass : inactiveClass
+                }`
               }
               to="/cart"
               onClick={closeMenu}

@@ -19,7 +19,7 @@ const CartCard = () => {
     <div>
       <h1 className="text-2xl font-bold">ตะกร้าสินค้า</h1>
       {/* Border */}
-      <div className="border p-2">
+      <div className="brder p-2">
         {/* Card */}
         {carts.map((item, index) => (
           <div key={index} className="bg-white p-2 rounded-md shadow-md mb-2">

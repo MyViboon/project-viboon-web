@@ -5,6 +5,7 @@ import useEcomStore from "../../store/ecom-store";
 
 const HeaderAdmin = () => {
   const user = useEcomStore((s) => s.user);
+
   return (
     <header className="bg-white h-16 flex justify-end items-center px-6">
       <div className="flex gap-2">
