@@ -60,7 +60,7 @@ const Payment = () => {
         </p>
         <div className="flex justify-center gap-6">
           <button
-            className="bg-yellow-500 hover:bg-yellow-600 text-white px-6 py-3 rounded-xl"
+            className="bg-yellow-500 hover:bg-yellow-600 text-white px-3 py-3 rounded-xl "
             onClick={() =>
               window.open("https://forms.gle/d2hyJuCxgZAhAnEV8", "_blank")
             }
@@ -68,7 +68,7 @@ const Payment = () => {
             แบบประเมิน
           </button>
           <button
-            className="bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-xl"
+            className="bg-blue-500 hover:bg-blue-600 text-white px-3 py-3 rounded-xl"
             onClick={() => navigate("/")}
           >
             ย้อนกลับ

@@ -6,7 +6,7 @@ import { toast } from "react-toastify";
 import { numberFormat } from "../../utils/number";
 import { dateFormat } from "../../utils/dateformat";
 
-const TableOrders = () => {
+const TableDash = () => {
   const token = useEcomStore((state) => state.token);
   const [orders, setOrders] = useState([]);
 
@@ -30,10 +30,10 @@ const TableOrders = () => {
 
   const handleChangeOrderStatus = (token, orderId, orderStatus) => {
     // code
-    console.log(orderId, orderStatus);
+    // console.log(orderId, orderStatus);
     changeOrderStatus(token, orderId, orderStatus)
       .then((res) => {
-        console.log(res);
+        // console.log(res);
         toast.success("Update Status Success!!!");
         handleGetOrder(token);
       })
@@ -72,8 +72,8 @@ const TableOrders = () => {
           </thead>
 
           <tbody>
-            {orders?.map((item, index) => {
-              console.log(item);
+            {orders?.slice(0, 5).map((item, index) => {
+              //   console.log(item);
               return (
                 <tr key={index} className="border">
                   <td className="text-center">{index + 1}</td>
@@ -131,4 +131,4 @@ const TableOrders = () => {
   );
 };
 
-export default TableOrders;
+export default TableDash;
